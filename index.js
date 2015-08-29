@@ -18,6 +18,8 @@ Elixir.extend( 'jshint', function( src, options )
 
     new Elixir.Task( 'jshint', function()
     {
+        this.log( paths.src );
+
         return gulp
             .src( src )
             .pipe( jshint( options || {} ))
@@ -29,7 +31,7 @@ Elixir.extend( 'jshint', function( src, options )
 
                 this.emit('end');
             })
-            .pipe( new Elixir.Notification( 'JSHint passed!' ));
+            .pipe( new Elixir.Notification( 'JSHint Passed!' ));
     })
     .watch( paths.src.path );
 });
