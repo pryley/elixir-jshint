@@ -13,6 +13,8 @@ $ npm install elixir-jshint --save-dev
 ```js
 var elixir = require( 'laravel-elixir' );
 
+require( 'elixir-jshint' );
+
 elixir( function( mix )
 {
     mix.jshint( ['js/**/*.js', '!js/vendor/*.js'] );
@@ -23,6 +25,8 @@ elixir( function( mix )
 
 ```js
 var elixir = require( 'laravel-elixir' );
+
+require( 'elixir-jshint' );
 
 elixir( function( mix )
 {
