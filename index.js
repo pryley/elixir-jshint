@@ -12,16 +12,23 @@ var Elixir = require( 'laravel-elixir' );
  | before the files are concatenated and minified for usage.
  */
 
+var config = Elixir.config;
+
 Elixir.extend( 'jshint', function( src, options )
 {
-    var paths = new Elixir.GulpPaths().src( src );
+    var paths = new Elixir.GulpPaths().src( src || [
+        config.get( 'assets.js.folder' ) + '/**/*.js',
+        '!' + config.get( 'assets.js.folder' ) + '/vendor/**/*.js',
+    ]);
+
+    paths.output = [];
 
     new Elixir.Task( 'jshint', function()
     {
-        this.log( paths.src );
+        this.recordStep( 'Analysing JS' );
 
         return gulp
-            .src( src )
+            .src( paths.src.path )
             .pipe( jshint( options || {} ))
             .pipe( jshint.reporter( 'jshint-stylish' ))
             .pipe( jshint.reporter( 'fail' ))
@@ -32,6 +39,6 @@ Elixir.extend( 'jshint', function( src, options )
                 this.emit('end');
             })
             .pipe( new Elixir.Notification( 'JSHint Passed!' ));
-    })
+    }, paths )
     .watch( paths.src.path );
 });
