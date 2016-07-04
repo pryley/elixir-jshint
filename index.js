@@ -34,7 +34,7 @@ Elixir.extend( 'jshint', function( src, options )
             .pipe( jshint.reporter( 'fail' ))
             .on( 'error', function( e )
             {
-                new Elixir.Notification().error( e, 'JSHint Failed!' )
+                new Elixir.Notification().error( e, 'JSHint Failed!' );
 
                 this.emit('end');
             })

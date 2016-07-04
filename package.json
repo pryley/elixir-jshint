@@ -1,31 +1,34 @@
 {
   "name": "elixir-jshint",
+  "description": "Laravel Elixir JSHint Extension",
   "version": "1.2.0",
-  "description": "Elixir JSHint Extension",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Paul Ryley",
+    "email": "paul@geminilabs.io"
   },
+  "homepage": "https://github.com/geminilabs/elixir-jshint",
   "repository": {
     "type": "git",
     "url": "https://github.com/geminilabs/elixir-jshint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geminilabs/elixir-jshint/issues"
   },
   "keywords": [
     "elixir",
     "jshint",
     "gulp"
   ],
-  "author": {
-    "name": "Paul Ryley",
-    "email": "paul@geminilabs.io"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/geminilabs/elixir-jshint/issues"
-  },
-  "homepage": "https://github.com/geminilabs/elixir-jshint",
+  "main": "index.js",
   "dependencies": {
     "gulp-jshint": "^2.0.1",
     "jshint-stylish": "^2.2.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.2"
+  },
+  "scripts": {
+    "lint": "jshint index.js"
   }
 }
