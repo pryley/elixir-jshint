@@ -1,7 +1,7 @@
 {
   "name": "elixir-jshint",
   "description": "Laravel Elixir JSHint Extension",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Paul Ryley",
     "email": "paul@geminilabs.io"
