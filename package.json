@@ -1,7 +1,7 @@
 {
   "name": "elixir-jshint",
   "description": "Laravel Elixir JSHint Extension",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Paul Ryley",
     "email": "paul@geminilabs.io"
@@ -23,10 +23,8 @@
   "main": "index.js",
   "dependencies": {
     "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"
-  },
-  "devDependencies": {
-    "jshint": "^2.9.2"
   },
   "scripts": {
     "lint": "jshint index.js"
